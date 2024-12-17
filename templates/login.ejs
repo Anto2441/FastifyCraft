@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Se connecter</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container mt-2">
+      <% if (locals.error) { %>
+      <div class="alert alert-danger"><%= locals.error %></div>
+      <% } %>
+
+      <h1 class="my-5">Se connecter</h1>
+
+      <div class="card-body">
+        <form action="" method="post">
+          <div class="mb-3">
+            <label for="username" class="form-label">Nom d'utilisateur</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              class="form-control"
+              placeholder="Entrez votre nom d'utilisateur"
+              value="<%= locals.username ?? '' %>"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Entrez votre mot de passe"
+            />
+          </div>
+          <button class="btn btn-primary">Se connecter</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
